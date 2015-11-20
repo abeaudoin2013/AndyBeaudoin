@@ -173,6 +173,159 @@ li {
   display: inline-block;
 }
 
+/*ART*/
+
+#one {
+  background: url(images/art/png/kissing.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#two {
+  background: url(images/art/png/chicago.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#three {
+  background: url(images/art/png/dancing.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#four {
+  background: url(images/art/png/chin.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#five {
+  background: url(images/art/png/girl.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#six {
+  background: url(images/art/png/pat.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#seven {
+  background: url(images/art/png/paris.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#eight {
+  background: url(images/art/png/northdakota.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#nine {
+  background: url(images/art/png/visages.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#ten {
+  background: url(images/art/png/womenAndCigs.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#eleven {
+  background: url(images/art/png/taistoi.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#twelve {
+  background: url(images/art/png/vile.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#thirteen {
+  background: url(images/art/png/turnip.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#fourteen {
+  background: url(images/art/png/foot.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#fifteen {
+  background: url(images/art/png/seeyou.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#sixteen {
+  background: url(images/art/png/swimming.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#seventeen {
+  background: url(images/art/png/darjeeling.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#eighteen {
+  background: url(images/art/png/marijuana.png);
+  width: 340px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+
+
+
+
+
+
+
 
 
 

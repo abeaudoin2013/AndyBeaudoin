@@ -25,6 +25,8 @@ $( document ).ready(function() {
 
         otherImages: [],
 
+        iteration: 0,
+
         devTimeout: null,
 
         artTimeout: null,
@@ -36,6 +38,8 @@ $( document ).ready(function() {
         artIsClicked: false,
 
         otherIsClicked: false,
+
+        upClicked: false,
 
         devTabVic: false,
 
@@ -53,6 +57,10 @@ $( document ).ready(function() {
             'background-color': ''
         },
 
+        changeTabColor: {'background-color': 'rgba(211, 77, 68, .8)'},
+
+        initialTabColor: {'background-color': 'rgba(211, 77, 68, .5)'},
+
         // carouselProps: {
         //     'background' : null,
         //     'width': '100%',
@@ -67,6 +75,8 @@ $( document ).ready(function() {
             var self = this;
 
             $('.devExtender').hide();
+
+            $('.artExtender').hide();
 
             $('#devClicker').click(function() {
 
@@ -90,15 +100,27 @@ $( document ).ready(function() {
 
         devStartShow: function () {
 
+            var self = this;
 
             if (this.artIsClicked === false && this.otherIsClicked === false) {
 
                 this.devIsClicked = true;
+
+                $('#up').click(function () {
+
+                    clearTimeout(self.devTimeout);
+                    $('.devExtender').slideUp(800);
+                    self.devUnChangeState();
+                    self.devIsClicked = false;
+
+                    self.iteration = 1;
+                    
+                });
                 
-                var iteration= $(this).data('iteration')||1
+                this.iteration = $(this).data('iteration')||1
                 
-                switch (iteration) {
-                
+                switch (this.iteration) {
+              
                     case 1:
                         
                         this.devClassChanger(0);
@@ -124,11 +146,13 @@ $( document ).ready(function() {
 
                 }
 
-                iteration++;
-                
-                if (iteration>2) iteration=1
+                this.iteration++;
 
-                $(this).data('iteration',iteration);
+               
+
+                if (this.iteration>2) this.iteration=1
+
+                $(this).data('iteration', this.iteration);
             }
 
         },
@@ -406,6 +430,10 @@ $( document ).ready(function() {
 
         devTabSelector: function () {
 
+            var self = this,
+            darken = this.changeTabColor,
+            lighten = this.initialTabColor;
+
             // this.devTabBlock = false;
             $('.aboutBlock').hide();
 
@@ -414,10 +442,15 @@ $( document ).ready(function() {
 
             // this.devTabVic = true;
             $('.aboutVicarious').fadeIn(500);
+            $('#vicTab').css(darken);
             
             
 
             $('#vicTab').click( function () {
+
+                $('#vicTab').css(darken);
+                $('#blockTab').css(lighten);
+                $('#topTab').css(lighten);
 
                 // this.devTabBlock = false;
                 $('.aboutBlock').hide();
@@ -432,7 +465,11 @@ $( document ).ready(function() {
             });
 
             $('#blockTab').click( function () {
-                
+
+                $('#vicTab').css(lighten);
+                $('#blockTab').css(darken);
+                $('#topTab').css(lighten);
+
                 // this.devTabVic = false;
                 $('.aboutVicarious').hide();
 
@@ -446,6 +483,10 @@ $( document ).ready(function() {
             });
 
             $('#topTab').click( function () {
+
+                $('#vicTab').css(lighten);
+                $('#blockTab').css(lighten);
+                $('#topTab').css(darken);
                 
                 // this.devTabBlock = false;
                 $('.aboutBlock').hide();
