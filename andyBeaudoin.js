@@ -13,6 +13,18 @@ $( document ).ready(function() {
 
         otherIcons: ["fa fa-camera-retro fa-5x", "fa fa-film fa-5x", "fa fa-language fa-5x", "fa fa-lightbulb-o fa-5x", "fa fa-hand-peace-o fa-5x", "fa fa-bicycle fa-5x"],
 
+        vicariousImages: ['vic_lander.png', 'vic_post.png', 'vic_post2.png', 'vic_story.png'],
+
+        blockImages: [],
+
+        top5Images: [],
+
+        devImages: [this.vicariousImages, this.blockImages, this.top5Images],
+
+        artImages: [],
+
+        otherImages: [],
+
         devTimeout: null,
 
         artTimeout: null,
@@ -25,6 +37,12 @@ $( document ).ready(function() {
 
         otherIsClicked: false,
 
+        devTabVic: false,
+
+        devTabBlock: false,
+
+        devTabTop: false,
+
         addedProps: {
             'border': '1px solid #A32227',
             'background-color': '#ECE6CD'
@@ -35,11 +53,20 @@ $( document ).ready(function() {
             'background-color': ''
         },
 
+        // carouselProps: {
+        //     'background' : null,
+        //     'width': '100%',
+        //     'height': '300px',
+        //     'background-repeat': 'no-repeat',
+        //     'background-size': 'contain',
+        //     'display': 'inline-block'
+        // },
+
         init: function () {
 
             var self = this;
 
-            $('.extender').hide();
+            $('.devExtender').hide();
 
             $('#devClicker').click(function() {
 
@@ -63,6 +90,7 @@ $( document ).ready(function() {
 
         devStartShow: function () {
 
+
             if (this.artIsClicked === false && this.otherIsClicked === false) {
 
                 this.devIsClicked = true;
@@ -72,16 +100,24 @@ $( document ).ready(function() {
                 switch (iteration) {
                 
                     case 1:
+                        
                         this.devClassChanger(0);
-                        $('.extender').slideDown(800);
+
+                        // this.devCarousel(0);
+                        
+                        $('.devExtender').slideDown(800);
+                        
                         this.devChangeState();
+                        
                         this.autoScroll();
+
+                        this.devTabSelector();
+
                         break;
                     
                     case 2:
-                        // this.devClassStatic(0);
                         clearTimeout(this.devTimeout);
-                        $('.extender').slideUp(800);
+                        $('.devExtender').slideUp(800);
                         this.devUnChangeState();
                         this.devIsClicked = false;
                         break;
@@ -143,6 +179,8 @@ $( document ).ready(function() {
 
         artStartShow: function () {
 
+            var self = this;
+
             if (this.devIsClicked === false && this.otherIsClicked === false) {
 
                 this.artIsClicked = true;
@@ -152,16 +190,25 @@ $( document ).ready(function() {
                 switch (iteration) {
                 
                     case 1:
+
                         this.artClassChanger(0);
-                        $('.extender').show();
+
+                        $('.artExtender').slideDown(800);
+
                         this.artChangeState();
+
                         this.autoScroll();
+
+                         $('.part1').click(function () {
+                            //Function
+                        });
+
                         break;
                     
                     case 2:
                         // this.devClassStatic(0);
+                        $('.artExtender').slideUp(800);
                         clearTimeout(this.artTimeout);
-                        $('.extender').hide();
                         this.artUnChangeState();
                         this.artIsClicked = false;
                         break;
@@ -223,6 +270,8 @@ $( document ).ready(function() {
 
         otherStartShow: function () {
 
+            var self = this;
+
             if (this.devIsClicked === false && this.artIsClicked === false) {
 
                 this.otherIsClicked = true;
@@ -232,16 +281,27 @@ $( document ).ready(function() {
                 switch (iteration) {
                 
                     case 1:
+
                         this.otherClassChanger(0);
-                        $('.extender').show();
+
+                        $('.otherExtender').slideDown(800);
+
                         this.otherChangeState();
+
                         this.autoScroll();
+
+                         $('.part1').click(function () {
+
+                            //Function
+
+                        });
+
                         break;
                     
                     case 2:
                         // this.devClassStatic(0);
+                        $('.otherExtender').slideUp(800);
                         clearTimeout(this.otherTimeout);
-                        $('.extender').hide();
                         this.otherUnChangeState();
                         this.otherIsClicked = false;
                         break;
@@ -252,7 +312,7 @@ $( document ).ready(function() {
                 
                 if (iteration>2) iteration=1
 
-                $(this).data('iteration',iteration);
+                $(this).data('iteration', iteration);
             }
         },
 
@@ -311,6 +371,7 @@ $( document ).ready(function() {
             $('#devClicker').css(this.lostProps);
 
         },
+
         artChangeState: function () {
 
             $('#artClicker').css(this.addedProps);
@@ -322,6 +383,7 @@ $( document ).ready(function() {
             $('#artClicker').css(this.lostProps);
 
         },
+
         otherChangeState: function () {
 
             $('#otherClicker').css(this.addedProps);
@@ -334,13 +396,117 @@ $( document ).ready(function() {
 
         },
 
-        autoScroll: function (){
+        autoScroll: function () {
 
             $('html, body').animate({
-                scrollTop: $(".extender").offset().top - 50
+                scrollTop: $(".devExtender").offset().top - 50
             }, 1000);
 
+        },
+
+        devTabSelector: function () {
+
+            // this.devTabBlock = false;
+            $('.aboutBlock').hide();
+
+            // this.devTabTop = false;
+            $('.aboutTopFive').hide();
+
+            // this.devTabVic = true;
+            $('.aboutVicarious').fadeIn(500);
+            
+            
+
+            $('#vicTab').click( function () {
+
+                // this.devTabBlock = false;
+                $('.aboutBlock').hide();
+
+                // this.devTabTop = false;
+                $('.aboutTopFive').hide();
+
+                // this.devTabTop = true;
+
+                $('.aboutVicarious').fadeIn(500);
+
+            });
+
+            $('#blockTab').click( function () {
+                
+                // this.devTabVic = false;
+                $('.aboutVicarious').hide();
+
+                // this.devTabTop = false;
+                $('.aboutTopFive').hide();
+
+                this.devTabBlock = true;
+
+                $('.aboutBlock').fadeIn(500);
+
+            });
+
+            $('#topTab').click( function () {
+                
+                // this.devTabBlock = false;
+                $('.aboutBlock').hide();
+
+                // this.devTabVic = false;
+                $('.aboutVicarious').hide();
+
+                $('.aboutTopFive').fadeIn(500);
+
+            });
+
         }
+
+        // devCarousel: function (index) {
+
+        //     //index is always current
+        //     //i is always the next
+        //     //j is always the last
+        //     var self = this,
+        //     i = index + 1,
+        //     j = this.vicariousImages.length - 1,
+        //     currentImage = "",
+        //     nextImage = this.vicariousImages[i];
+
+        //     if (index === -1) {
+
+        //         currentImage = this.vicariousImages[j];
+
+        //     } else {
+
+        //         currentImage = this.vicariousImages[index];
+
+        //     }
+
+        //     this.carouselProps['background'] = 'url(images/dev/' + currentImage + ')'
+
+        //     $('.part1').css(this.carouselProps);
+
+
+        //     $('.part1').click( function () {
+
+        //         if (i === j) {
+
+        //             self.devCarousel(-1);
+
+        //         } else {
+
+        //             self.devCarousel(i);
+
+        //         }
+        //     });
+
+        // },
+
+        // artCarousel: function (index) {
+
+        // },
+
+        // artCarousel: function (index) {
+
+        // }
 
     };
 

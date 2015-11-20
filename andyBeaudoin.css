@@ -46,16 +46,132 @@ li {
   margin-left: 20px;
 }
 
-.part2 {
-  margin-top: 2%;
+
+.extenderNav {
+
 }
-.pic1 {
-  width: 100%;
+.extenderOptions {
+  display: inline-block;
+  font-size: 2em;
+  background-color: rgba(211, 77, 68, .5); 
+  padding: 0em 3em;
+  cursor: pointer;
 }
-.about {
-	margin-top: 7%;
+#vicTab {
+  
+}
+#blockTab {
+
+}
+#topTab {
+
 }
 
+.links {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+}
+.links:hover{
+  text-decoration: none;
+}
+
+#pic1 {
+  background: url(images/dev/vic_lander.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic2 {
+  background: url(images/dev/vic_post.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic3 {
+  background: url(images/dev/vic_post2.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic4 {
+  background: url(images/dev/vic_story.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic5 {
+  background: url(images/dev/block_landing.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic6 {
+  background: url(images/dev/block_copy.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic7 {
+  background: url(images/dev/block_profile.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic8 {
+  background: url(images/dev/block_250.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic9 {
+  background: url(images/dev/vic_lander.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic10 {
+  background: url(images/dev/vic_post.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic11 {
+  background: url(images/dev/vic_post2.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#pic12 {
+  background: url(images/dev/vic_story.png);
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
 
 
 
