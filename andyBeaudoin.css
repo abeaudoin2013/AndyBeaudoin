@@ -14,23 +14,25 @@ li {
 }
 
 .contentContainer {
-	max-width: 360px;
-  margin-top: -15vh;
+	/*max-width: 360px;*/
+  /*margin-top: -15vh;*/
 
 }
 .content {
+  margin: 5% auto;
   box-sizing: border-box;
   border-radius: 50%;
   background: url() no-repeat;
   cursor: pointer;
   background-color: #DDDDDD;
   border: 1px solid gray;
-  max-width: 70%;
-  height: 240px;
+  width: 320px;
+  height: 300px;
+  margin-top: 5%;
   text-align: center;
   overflow: hidden;
-  margin-top: 26vh;
-  margin-left: 50px;
+  /*margin-top: 26vh;*/
+  /*margin-left: 50px;*/
 }
 #icon1 {
   margin-top: 33%;
@@ -43,13 +45,17 @@ li {
 }
 .titles {
 	margin-top: 15px;
-  margin-left: 20px;
+}
+.artExtender {
+  display: block;
+  margin-top: 20px;
+  border-top: 1px solid gray;
+  padding-top: 20px;
+  padding-left: 5%;
+  margin-bottom: 5%;
 }
 
 
-.extenderNav {
-
-}
 .extenderOptions {
   display: inline-block;
   font-size: 2em;
@@ -57,16 +63,17 @@ li {
   padding: 0em 3em;
   cursor: pointer;
 }
-#vicTab {
-  
+.devFloaterClose {
+  width: 35px;
+  padding: 0px;
+  right: 5%;
+  top: 94%;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  z-index: 10;
 }
-#blockTab {
-
-}
-#topTab {
-
-}
-
 .links {
   display: block;
   text-align: center;
@@ -76,8 +83,18 @@ li {
   text-decoration: none;
 }
 
+.artFloaterClose {
+  top: 94%;
+  left: 5%;
+  width: 35px;
+  padding: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+}
 #pic1 {
-  background: url(images/dev/vic_lander.png);
+  background: url(images/dev/vic_lander.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -85,7 +102,7 @@ li {
   display: inline-block;
 }
 #pic2 {
-  background: url(images/dev/vic_post.png);
+  background: url(images/dev/vic_post.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -93,7 +110,7 @@ li {
   display: inline-block;
 }
 #pic3 {
-  background: url(images/dev/vic_post2.png);
+  background: url(images/dev/vic_post2.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -101,7 +118,7 @@ li {
   display: inline-block;
 }
 #pic4 {
-  background: url(images/dev/vic_story.png);
+  background: url(images/dev/vic_story.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -109,7 +126,7 @@ li {
   display: inline-block;
 }
 #pic5 {
-  background: url(images/dev/block_landing.png);
+  background: url(images/dev/block_landing.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -117,7 +134,7 @@ li {
   display: inline-block;
 }
 #pic6 {
-  background: url(images/dev/block_copy.png);
+  background: url(images/dev/block_copy.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -125,7 +142,7 @@ li {
   display: inline-block;
 }
 #pic7 {
-  background: url(images/dev/block_profile.png);
+  background: url(images/dev/block_profile.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -133,7 +150,7 @@ li {
   display: inline-block;
 }
 #pic8 {
-  background: url(images/dev/block_250.png);
+  background: url(images/dev/block_250.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -141,7 +158,7 @@ li {
   display: inline-block;
 }
 #pic9 {
-  background: url(images/dev/vic_lander.png);
+  background: url(images/dev/vic_lander.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -149,7 +166,7 @@ li {
   display: inline-block;
 }
 #pic10 {
-  background: url(images/dev/vic_post.png);
+  background: url(images/dev/vic_post.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -157,7 +174,7 @@ li {
   display: inline-block;
 }
 #pic11 {
-  background: url(images/dev/vic_post2.png);
+  background: url(images/dev/vic_post2.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -165,7 +182,7 @@ li {
   display: inline-block;
 }
 #pic12 {
-  background: url(images/dev/vic_story.png);
+  background: url(images/dev/vic_story.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -320,11 +337,190 @@ li {
   display: inline-block;
 }
 
+/*I need to add a break point for the innerlay. Pictures go off to the side on mobile b/c position absolute?*/
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .9);
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 20;
+  text-align: center;
+}
+.innerlay {
+  margin-top: 2%;
+}
+.aboutArt {
+  display: inline-block;
+  vertical-align: top;
+}
+.modalClose {
+  color: white;
+  width: 35px;
+  padding: 0px;
+  right: 5%;
+  top: 5%;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  z-index: 20;
+}
 
+/*Other*/
 
+.otherExtender {
+  margin-bottom: 5%;
+}
 
+.otherTabs h4 {
+  display: inline-block;
+  font-size: 2em;
+  background-color: rgba(211, 77, 68, .5); 
+  padding: 0em 3em;
+  cursor: pointer;
+}
+#seperator {
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  margin-bottom: 15px;
+}
+.filmDrop {
+  margin: 0 auto;
+  background-color: rgba(245, 2, 24, 0.6);
+  padding-left: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#some1 {
+  background: url(images/films/some/poster.png) center;
+  width: 100%;
+  height: 395px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#some2 {
+  background: url(images/films/some/andyset.png) center;
+  width: 100%;
+  height: 350px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#some3 {
+  background: url(images/films/some/andyset2.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#some4 {
+  background: url(images/films/some/andyset3.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#married1 {
+  background: url(images/films/married/set1.png) center;
+  width: 100%;
+  height: 200px;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#married2 {
+  background: url(images/films/married/set2.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#married3 {
+  background: url(images/films/married/set3.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#married4 {
+  background: url(images/films/married/set4.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#still1 {
+  background: url(images/stillHouse/still1.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#still2 {
+  background: url(images/stillHouse/still2.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
+#coffee {
+  background: url(images/coffee/pedlar.png) center;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+}
 
-
+.about {
+  border-left: 1px solid rgba(242, 5, 66, 1);
+  margin: 5% auto;
+  margin-left: 2%;
+  padding: 0 5%;
+}
+.otherFloaterClose {
+  width: 35px;
+  padding: 0px;
+  right: 5%;
+  top: 94%;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  position: fixed;
+  z-index: 10;
+}
+.contactLinks {
+  margin: 0 auto;
+  margin-right: 2%;
+  padding: 0 5%;
+  text-align: center;
+  border-right: 1px solid rgba(216, 124, 5, 1);
+}
+.contactLinks a {
+  margin: 15px;
+  display: inline-block;
+}
+#too_tight {
+  margin-top: 5%;
+}
+.othercolors{
+ background-color: rgba(242, 5, 66, 0.6);
+ background-color: rgba(127, 190, 146, 0.6);
+ background-color: rgba(248, 214, 6, 0.6);
+ background-color: rgba(216, 124, 5, 0.6);
+}
 
 
 

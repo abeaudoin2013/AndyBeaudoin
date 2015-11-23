@@ -3,6 +3,7 @@
 <head>
 	<title>Andy Beaudoin Portfolio</title>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="jquery-2.1.4.min.js"></script>
 	<script src="jquery-ui.min.js"></script>
 	<script src="andyBeaudoin.js"></script>
@@ -24,36 +25,39 @@
 
 		<div class="row">
 
-			<div class="col-lg-4">
-				<div class="contentContainer">
+			<div class="col-md-4">
+
 					<div class="content" id="devClicker">
 						<i class="fa fa-code fa-5x" id="icon1"></i>
+						<p class="titles">Full Stack Web Developer</p>
 					</div>
-				</div>
-				<p class="titles">Full Stack Web Developer</p>
+
 			</div>
 
-			<div class="col-lg-4">
-				<div class="contentContainer">
+			<div class="col-md-4">
+
 					<div class="content" id="artClicker">
 						<i class="fa fa-pencil fa-5x" id="icon2"></i>
+						<p class="titles">Artist</p>
 					</div>
-				</div>
-				<p class="titles">Artist</p>
+
 			</div>
 
-			<div class="col-lg-4">
-				<div class="contentContainer">
+			<div class="col-md-4">
+
 					<div class="content" id="otherClicker">
 						<i class="fa fa-camera-retro fa-5x" id="icon3"></i>
+						<p class="titles">Other</p>
 					</div>
-				</div>
-				<p class="titles">Other</p>
+
 			</div>
 
 		</div>
 
+<!-- content -->
+
 		<div class="row">
+
 			<div class="col-md-12">
 
 				<div class="devExtender">
@@ -61,55 +65,55 @@
 						<h4 class='extenderOptions' id="vicTab">Vicarious</h4>
 						<h4 class='extenderOptions' id='blockTab'>Block</h4>
 						<h4 class='extenderOptions' id='topTab'>Top Five</h4>
-						<h4 class='extenderOptions' id='up'>X</h4>
+						<div class='devFloaterClose'><i class="fa fa-times fa-2x"></i></div>
 					</nav>
 
 					<div class='aboutVicarious'>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<h2>This project is called Vicarious.</h2>
 							<p>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. All users' stories are visible on the home page, so you can see all the different places people have been!</p>
 							<a class='links' href="" target="_blank">See the website</a>
 							<a class='links' href="https://github.com/abeaudoin2013/vicarious" target="_blank"><i class="fa fa-github fa-3x"></i></a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic1"></div>
 							<div id="pic2"></div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic3"></div>
 							<div id="pic4"></div>
 						</div>
 					</div>
 
 					<div class='aboutBlock'>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<h2>This project is called Block.</h2>
 							<p>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. All users' stories are visible on the home page, so you can see all the different places people have been!</p>
 							<a class='links' href="http://stark-falls-7672.herokuapp.com/login" target="_blank">See the website</a>
 							<a class='links' href="https://github.com/abeaudoin2013/Block" target="_blank"><i class="fa fa-github fa-3x"></i></a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic7"></div>
 							<div id="pic8"></div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic5"></div>
 							<div id="pic6"></div>
 						</div>
 					</div>
 
 					<div class='aboutTopFive'>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<h2>This project is called Top Five.</h2>
 							<p>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. All users' stories are visible on the home page, so you can see all the different places people have been!</p>
-							<a class='links' href="" target="_blank">See the website</a>
+							<a class='links' href="https://pacific-harbor-3255.herokuapp.com/" target="_blank">See the website</a>
 							<a class='links' href="https://github.com/abeaudoin2013/TopFive" target="_blank"><i class="fa fa-github fa-3x"></i></a>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic9"></div>
 							<div id="pic10"></div>
 						</div>
-						<div class="col-md-4">
+						<div class="col-sm-4">
 							<div id="pic11"></div>
 							<div id="pic12"></div>
 						</div>
@@ -119,6 +123,8 @@
 				<!-- art Extender start -->
 
 				<div class="artExtender">
+
+					<div class="artFloaterClose"><i class="fa fa-times fa-2x"></i></div>
 
 					<div class="piece" id='one'></div>
 					<div class="piece" id='two'></div>
@@ -140,26 +146,158 @@
 					<div class="piece" id='eighteen'></div>
 
 			</div>
-		</div>
 
-		<div class="row">
+			<div class="otherExtender">
+					<!-- <nav calss='extenderNav'>
+						<h4 class='extenderOptions' id="vicTab">Vicarious</h4>
+						<h4 class='extenderOptions' id='blockTab'>Block</h4>
+						<h4 class='extenderOptions' id='topTab'>Top Five</h4>
+						<div class='devFloaterClose'><i class="fa fa-times fa-2x"></i></div>
+					</nav> -->
+				<nav class="otherTabs">
+					<h4 class='filmDrop'>Films</h4>
+					<h4 class='writingDrop'>Writing and Journalism</h4>
+					<h4 class='pastWorkDrop'>Past Work</h4>
+					<div class='other FloaterClose'><i class="fa fa-times fa-2x"></i></div>
+				</nav>
 
-			<div class="col-lg-12">
-				<div class='about'>
-					<h3>about</h3>
-					<p id="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div>
+					<div class='films'>
+
+						<div class="row" id='seperator'>
+							<div class="col-sm-3">
+								<h2>Some Are Born</h2>
+								<p class='summary'>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. All users' stories are visible on the home page, so you can see all the different places people have been!</p>
+								<h3>roles</h3>
+								<p>Production Design</p>
+								<a href="https://www.youtube.com/watch?v=JkRy5JqgrhI">Watch the Trailer</a>
+							</div>
+							<div class="col-sm-3">
+								<div id="some1"></div>
+							</div>
+							<div class="col-sm-3">
+								<div id="some2"></div>
+							</div>
+							<div class="col-sm-3">
+								<div id="some3"></div>
+								<div id="some4"></div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<h2>Married with Benefits</h2>
+								<p class='summary'>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. All users' stories are visible on the home page, so you can see all the different places people have been!</p>
+								<h3>roles</h3>
+								<p>Screenwriter</p>
+								<p>Production Design</p>
+								<p>Music Supervisor</p>
+								<a href="https://www.youtube.com/watch?v=EZnsUhQ1mcE">Watch the Trailer</a>
+							</div>
+							<div class="col-sm-4">
+								<div id="married1"></div>
+								<div id="married2"></div>
+							</div>
+							<div class="col-sm-4">
+								<div id="married3"></div>
+								<div id="married4"></div>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- WRITE ABOUT CRAIG WRITING PROJECT-->
+
+					<div class='writings'>
+						<div class="col-sm-6">
+							<h2><a href="https://www.uloop.com/news/author.php/891/Andy-Beaudoin">My articles at Uloop News</a></h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+							</p>
+						</div>
+						<div class="col-sm-6">
+							<h2><a href="https://www.tumblr.com/blog/franco-file">Travel Blog from my Journies in France</a></h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+
+					<div class='pastWorks'>
+						<div class="col-md-4">
+							<h2>Intern at the Still House Group</h2>
+							<div id="still2"></div>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+						<div class="col-md-4">
+							<h2>Barista</h2>
+							<div id="coffee"></div>
+							<p>Professional Barista. 2 years + experience. NYC/Paris/Lansing</p>
+							<h4><a href="https://www.instagram.com/gorillacoffee/">Gorilla Coffee</a></h4>
+							<h4><a href="https://www.instagram.com/bluebirdcoffeeshop/">Bluebird Coffee Shop</a></h4>
+							<h4><a href="https://www.instagram.com/gorillacoffee/">Cafe Pedlar</a></h4>							
+						</div>
+						<div class="col-md-4">
+							<h2>ESL Teacher in Paris</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						</div>
+					</div>
+
 			</div>
-			
+
 		</div>
 
 	</div>
+
+	<div class="row" id='too_tight'>
+
+		<div class="col-lg-5">
+			<div class='about'>
+				<h2 id="about">I'm a web developer looking for work.</h2>
+				<p>Art and technology holds value in everything I do. I'm proficient in HTML5, CSS3, Javascript, Ruby and the Rails framework. I plan on investing more time in Javascript frameworks, PHP, and Objective C.</p>
+			</div>
+		</div>
+
+		<div class='col-lg-7'>
+			<div class='contactLinks'>
+				<h3>Contact</h3>
+				<p>abeaudoin2013@gmail.com</p>
+				<a href="https://github.com/abeaudoin2013" target="_blank"><i class="fa fa-github fa-3x"></i><p>github</p></a>
+				<a href="https://www.linkedin.com/in/andybeaudoin" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i><p>linkedIn</p></a>
+				<a href="http://stackoverflow.com/users/5520659/andy-beaudoin" target="_blank"><i class="fa fa-stack-overflow fa-3x"></i><p>stack overflow</p></a>
+				<a href="https://www.instagram.com/sonofserpico/" target="_blank"><i class="fa fa-instagram fa-3x"></i><p>instagram</p></a>
+				<a href="https://twitter.com/abeaudoin2013" target="_blank"><i class="fa fa-twitter fa-3x"></i><p>twitter</p></a>		
+			</div>
+		</div>
+
+	</div>
+</div>
+</div>
+
+<div class="overlay">
+	<div class="innerlay">
+		<div class="modalClose"><i class="fa fa-times fa-2x"></i></div>
+		<div class="aboutArt">
+		</div>
+
+	</div>
+</div>
 
 </body>
 </html>

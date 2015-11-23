@@ -25,7 +25,13 @@ $( document ).ready(function() {
 
         otherImages: [],
 
-        iteration: 0,
+        devIteration: 1,
+
+        artIteration: 1,
+
+        otherIteration: 1,
+
+        filmIteration: 1,
 
         devTimeout: null,
 
@@ -39,7 +45,7 @@ $( document ).ready(function() {
 
         otherIsClicked: false,
 
-        upClicked: false,
+        filmIsClicked: false,
 
         devTabVic: false,
 
@@ -55,6 +61,15 @@ $( document ).ready(function() {
         lostProps: {
             'border': '',
             'background-color': ''
+        },
+
+        modalProps: {
+            'background': '',
+            'width': '100%',
+            'height': '93%',
+            'margin-left': '29%',
+            'margin-top': '3%;',
+            'display': 'inline-block'
         },
 
         changeTabColor: {'background-color': 'rgba(211, 77, 68, .8)'},
@@ -77,6 +92,12 @@ $( document ).ready(function() {
             $('.devExtender').hide();
 
             $('.artExtender').hide();
+
+            $('.otherExtender').hide();
+
+            $('.films').hide();
+
+            $('.overlay').hide();
 
             $('#devClicker').click(function() {
 
@@ -105,54 +126,50 @@ $( document ).ready(function() {
             if (this.artIsClicked === false && this.otherIsClicked === false) {
 
                 this.devIsClicked = true;
-
-                $('#up').click(function () {
-
-                    clearTimeout(self.devTimeout);
-                    $('.devExtender').slideUp(800);
-                    self.devUnChangeState();
-                    self.devIsClicked = false;
-
-                    self.iteration = 1;
-                    
-                });
                 
-                this.iteration = $(this).data('iteration')||1
                 
-                switch (this.iteration) {
+                switch (this.devIteration) {
               
                     case 1:
                         
                         this.devClassChanger(0);
-
-                        // this.devCarousel(0);
                         
                         $('.devExtender').slideDown(800);
                         
                         this.devChangeState();
                         
-                        this.autoScroll();
+                        this.devAutoScroll();
 
                         this.devTabSelector();
+
+                        $('.devFloaterClose').show();
 
                         break;
                     
                     case 2:
+
                         clearTimeout(this.devTimeout);
+
                         $('.devExtender').slideUp(800);
+
                         this.devUnChangeState();
+
+                        this.unAutoScroll();
+
                         this.devIsClicked = false;
+
                         break;
 
                 }
 
-                this.iteration++;
-
+                this.devIteration++;
                
+                if (this.devIteration > 2) {
 
-                if (this.iteration>2) this.iteration=1
+                    this.devIteration = 1
 
-                $(this).data('iteration', this.iteration);
+                }
+
             }
 
         },
@@ -209,9 +226,9 @@ $( document ).ready(function() {
 
                 this.artIsClicked = true;
             
-                var iteration= $(this).data('iteration')||1
+                // var iteration= $(this).data('iteration')||1
                 
-                switch (iteration) {
+                switch (this.artIteration) {
                 
                     case 1:
 
@@ -221,31 +238,42 @@ $( document ).ready(function() {
 
                         this.artChangeState();
 
-                        this.autoScroll();
+                        this.artAutoScroll();
 
-                         $('.part1').click(function () {
-                            //Function
-                        });
+                        this.artModals();
+
+                        this.closeArt();
+
+                        $('.artFloaterClose').show();
 
                         break;
                     
                     case 2:
-                        // this.devClassStatic(0);
+
                         $('.artExtender').slideUp(800);
+
                         clearTimeout(this.artTimeout);
+
                         this.artUnChangeState();
+
+                        this.unAutoScroll();
+
                         this.artIsClicked = false;
+
                         break;
 
                 }
 
-                iteration++;
+                this.artIteration++;
                 
-                if (iteration>2) iteration=1
+                if (this.artIteration>2) {
+                 
+                    this.artIteration = 1
 
-                $(this).data('iteration',iteration);
+                }
+
+                // $(this).data('iteration',iteration);
             }
-
         },
 
         artClassChanger: function (index) {
@@ -300,9 +328,8 @@ $( document ).ready(function() {
 
                 this.otherIsClicked = true;
 
-                var iteration= $(this).data('iteration')||1
                 
-                switch (iteration) {
+                switch (this.otherIteration) {
                 
                     case 1:
 
@@ -312,31 +339,40 @@ $( document ).ready(function() {
 
                         this.otherChangeState();
 
-                        this.autoScroll();
+                        this.otherAutoScroll();
 
-                         $('.part1').click(function () {
+                        this.otherTabSelector();
 
-                            //Function
+                        this.closeOther();
 
-                        });
+                        $('.otherFloaterClose').show();
 
                         break;
                     
                     case 2:
-                        // this.devClassStatic(0);
+
                         $('.otherExtender').slideUp(800);
+
                         clearTimeout(this.otherTimeout);
+
                         this.otherUnChangeState();
+
+                        this.unAutoScroll();
+
                         this.otherIsClicked = false;
+
                         break;
 
                 }
 
-                iteration++;
+                this.otherIteration++;
                 
-                if (iteration>2) iteration=1
+                if (this.otherIteration>2) {
 
-                $(this).data('iteration', iteration);
+                    this.otherIteration=1
+
+                }
+
             }
         },
 
@@ -350,7 +386,7 @@ $( document ).ready(function() {
 
             if (index === -1) {
 
-            // this is telling the program to set the last icon as the current
+            // Set the last icon as the current
 
                 currentOtherIcon = this.otherIcons[j];
 
@@ -420,11 +456,35 @@ $( document ).ready(function() {
 
         },
 
-        autoScroll: function () {
+        devAutoScroll: function () {
 
             $('html, body').animate({
                 scrollTop: $(".devExtender").offset().top - 50
-            }, 1000);
+            }, 500);
+
+        },
+
+        artAutoScroll: function () {
+
+            $('html, body').animate({
+                scrollTop: $(".artExtender").offset().top - 25
+            }, 500);
+
+        },
+
+        otherAutoScroll: function () {
+
+            $('html, body').animate({
+                scrollTop: $('.otherExtender').offset().top - 25
+            }, 500);
+
+        },
+
+        unAutoScroll: function () {
+
+            $('html, body').animate({
+                scrollTop: "0px"
+            }, 500);
 
         },
 
@@ -476,7 +536,7 @@ $( document ).ready(function() {
                 // this.devTabTop = false;
                 $('.aboutTopFive').hide();
 
-                this.devTabBlock = true;
+                // this.devTabBlock = true;
 
                 $('.aboutBlock').fadeIn(500);
 
@@ -498,56 +558,258 @@ $( document ).ready(function() {
 
             });
 
+            $('.devFloaterClose').click( function () {
+
+                //We need to set this to 2 because
+                //the switch statement won't iterate
+                //because we've technically called this function 
+                //within case1 of the switch
+
+                $('.devFloaterClose').hide();
+
+                self.devIteration = 2;
+
+                self.devStartShow();
+
+            });
+
+        },
+
+        artModals: function () {
+
+            var self = this;
+
+            $('#one').click( function () {
+
+                self.modalEvent('#one');
+
+            });
+
+            $('#two').click( function () {
+
+                self.modalEvent('#two');
+
+            });
+
+            $('#three').click( function () {
+
+                self.modalEvent('#three');
+
+            });
+
+            $('#four').click( function () {
+
+                self.modalEvent('#four');
+
+            });
+
+            $('#five').click( function () {
+
+                self.modalEvent('#five');
+
+            });
+
+            $('#six').click( function () {
+
+                self.modalEvent('#six');
+
+            });
+
+            $('#seven').click( function () {
+
+                self.modalEvent('#seven');
+
+            });
+
+            $('#eight').click( function () {
+
+                self.modalEvent('#eight');
+
+            });
+
+            $('#nine').click( function () {
+
+                self.modalEvent('#nine');
+
+            });
+
+            $('#ten').click( function () {
+
+                self.modalEvent('#ten');
+
+            });
+
+            $('#eleven').click( function () {
+
+                self.modalEvent('#eleven');
+
+            });
+
+            $('#twelve').click( function () {
+
+                self.modalEvent('#twelve');
+
+            });
+
+            $('#thirteen').click( function () {
+
+                self.modalEvent('#thirteen');
+
+            });
+
+            $('#fourteen').click( function () {
+
+                self.modalEvent('#fourteen');
+
+            });
+
+            $('#fifteen').click( function () {
+
+                self.modalEvent('#fifteen');
+
+            });
+
+            $('#sixteen').click( function () {
+
+                self.modalEvent('#sixteen');
+
+            });
+
+            $('#seventeen').click( function () {
+
+                self.modalEvent('#seventeen');
+
+            });
+
+            $('#eighteen').click( function () {
+
+                self.modalEvent('#eighteen');
+
+            });
+
+        },
+
+        modalEvent: function (element) {
+
+            var self = this;
+
+            this.modalProps['background'] = $(element).css('background');
+
+                $('.overlay').slideDown(500);
+
+                $('.innerlay').css(self.modalProps);
+
+                $('.artFloaterClose').hide();
+
+                $('.modalClose').click( function () {
+
+                    $('.overlay').slideUp(500);
+
+                    $('.artFloaterClose').show();
+
+                });
+
+        },
+
+        closeArt: function () {
+
+            var self = this;
+
+            $('.artFloaterClose').click( function () {
+
+                $('.artFloaterClose').hide();
+
+                self.artIteration = 2;
+
+                self.artStartShow();
+
+            });
+
+        },
+
+        closeOther: function () {
+
+            var self = this;
+
+            $('.otherFloaterClose').click( function () {
+
+                $('.otherFloaterClose').hide();
+
+                self.otherIteration = 2;
+
+                self.otherStartShow();
+
+            });
+
+        },
+
+        otherTabSelector: function () {
+
+            var self = this,
+            darken = this.changeTabColor,
+            lighten = this.initialTabColor;
+
+            $('.filmDrop').css(darken);
+            $('.films').fadeIn(500);
+
+            $('.writingDrop').css(lighten);
+            $('.writings').hide();
+
+            $('.pastWorkDrop').css(lighten);
+            $('.pastWorks').hide();
+
+
+           
+            $('.filmDrop').click(function () {
+
+                $('.filmDrop').css(darken);
+
+                $('.writingDrop').css(lighten);
+                $('.writings').hide();
+
+                $('.pastWorkDrop').css(lighten);
+                $('.pastWorks').hide();
+
+                $('.films').fadeIn(500)
+
+            });
+
+            $('.writingDrop').click( function () {
+
+                $('.filmDrop').css(lighten);
+                $('.writingDrop').css(darken);
+                $('.pastWorkDrop').css(lighten);
+
+                // this.devTabVic = false;
+                $('.films').hide();
+
+                // this.devTabTop = false;
+                $('.pastWorks').hide();
+
+                // this.devTabBlock = true;
+
+                $('.writings').fadeIn(500);
+
+            });
+
+            $('.pastWorkDrop').click( function () {
+
+                $('.filmDrop').css(lighten);
+                $('.writingDrop').css(lighten);
+                $('.pastWorkDrop').css(darken);
+                
+                // this.devTabBlock = false;
+                $('.films').hide();
+
+                // this.devTabVic = false;
+                $('.writings').hide();
+
+                $('.pastWorks').fadeIn(500);
+
+            });
+
+
         }
-
-        // devCarousel: function (index) {
-
-        //     //index is always current
-        //     //i is always the next
-        //     //j is always the last
-        //     var self = this,
-        //     i = index + 1,
-        //     j = this.vicariousImages.length - 1,
-        //     currentImage = "",
-        //     nextImage = this.vicariousImages[i];
-
-        //     if (index === -1) {
-
-        //         currentImage = this.vicariousImages[j];
-
-        //     } else {
-
-        //         currentImage = this.vicariousImages[index];
-
-        //     }
-
-        //     this.carouselProps['background'] = 'url(images/dev/' + currentImage + ')'
-
-        //     $('.part1').css(this.carouselProps);
-
-
-        //     $('.part1').click( function () {
-
-        //         if (i === j) {
-
-        //             self.devCarousel(-1);
-
-        //         } else {
-
-        //             self.devCarousel(i);
-
-        //         }
-        //     });
-
-        // },
-
-        // artCarousel: function (index) {
-
-        // },
-
-        // artCarousel: function (index) {
-
-        // }
 
     };
 
