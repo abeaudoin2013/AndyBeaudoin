@@ -503,6 +503,8 @@ $( document ).ready(function() {
             // this.devTabVic = true;
             $('.aboutVicarious').fadeIn(500);
             $('#vicTab').css(darken);
+            $('#blockTab').css(lighten);
+            $('#topTab').css(lighten);
             
             
 

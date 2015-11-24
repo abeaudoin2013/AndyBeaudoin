@@ -199,6 +199,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #two {
   background: url(images/art/png/chicago.png);
@@ -207,6 +208,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #three {
   background: url(images/art/png/dancing.png);
@@ -215,6 +217,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #four {
   background: url(images/art/png/chin.png);
@@ -223,6 +226,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #five {
   background: url(images/art/png/girl.png);
@@ -231,6 +235,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #six {
   background: url(images/art/png/pat.png);
@@ -239,6 +244,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #seven {
   background: url(images/art/png/paris.png);
@@ -247,6 +253,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #eight {
   background: url(images/art/png/northdakota.png);
@@ -255,6 +262,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #nine {
   background: url(images/art/png/visages.png);
@@ -263,6 +271,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #ten {
   background: url(images/art/png/womenAndCigs.png);
@@ -271,6 +280,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #eleven {
   background: url(images/art/png/taistoi.png);
@@ -279,6 +289,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #twelve {
   background: url(images/art/png/vile.png);
@@ -287,6 +298,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #thirteen {
   background: url(images/art/png/turnip.png);
@@ -295,6 +307,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #fourteen {
   background: url(images/art/png/foot.png);
@@ -303,6 +316,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #fifteen {
   background: url(images/art/png/seeyou.png);
@@ -311,6 +325,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #sixteen {
   background: url(images/art/png/swimming.png);
@@ -319,6 +334,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #seventeen {
   background: url(images/art/png/darjeeling.png);
@@ -327,6 +343,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 #eighteen {
   background: url(images/art/png/marijuana.png);
@@ -335,6 +352,7 @@ li {
   background-repeat: no-repeat;
   background-size: contain;
   display: inline-block;
+  cursor: pointer;
 }
 
 /*I need to add a break point for the innerlay. Pictures go off to the side on mobile b/c position absolute?*/
@@ -485,7 +503,6 @@ li {
 }
 
 .about {
-  border-left: 1px solid rgba(242, 5, 66, 1);
   margin: 5% auto;
   margin-left: 2%;
   padding: 0 5%;
@@ -506,14 +523,17 @@ li {
   margin-right: 2%;
   padding: 0 5%;
   text-align: center;
-  border-right: 1px solid rgba(216, 124, 5, 1);
+  
 }
 .contactLinks a {
   margin: 15px;
   display: inline-block;
 }
 #too_tight {
-  margin-top: 5%;
+  margin: 5% 3%;
+  border-right: 1px solid rgba(216, 124, 5, 1);
+  border-left: 1px solid rgba(242, 5, 66, 1);
+
 }
 .othercolors{
  background-color: rgba(242, 5, 66, 0.6);
@@ -522,6 +542,12 @@ li {
  background-color: rgba(216, 124, 5, 0.6);
 }
 
+footer {
+  width: 90%;
+  margin: 15px auto;
+  height: 80px;
+  border-bottom: 1px solid black;
+}
 
 
 
