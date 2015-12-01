@@ -101,17 +101,23 @@ $( document ).ready(function() {
 
             $('#devClicker').click(function() {
 
+                console.log('dev');
+
                 self.devStartShow();
 
             });
 
             $('#artClicker').click(function(){
 
+                console.log('art');
+
                 self.artStartShow();
                 
             });
 
             $('#otherClicker').click(function(){
+
+                console.log('other');
 
                 self.otherStartShow();
 

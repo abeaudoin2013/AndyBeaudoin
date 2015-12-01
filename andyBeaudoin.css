@@ -163,7 +163,7 @@ li {
   display: inline-block;
 }
 #pic9 {
-  background: url(images/dev/vic_lander.png) center;
+  background: url(images/dev/top5_1.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -171,7 +171,7 @@ li {
   display: inline-block;
 }
 #pic10 {
-  background: url(images/dev/vic_post.png) center;
+  background: url(images/dev/top5_2.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -179,15 +179,7 @@ li {
   display: inline-block;
 }
 #pic11 {
-  background: url(images/dev/vic_post2.png) center;
-  width: 100%;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: inline-block;
-}
-#pic12 {
-  background: url(images/dev/vic_story.png) center;
+  background: url(images/dev/top5_3.png) center;
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
