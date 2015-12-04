@@ -25,11 +25,11 @@ $( document ).ready(function() {
 
         otherImages: [],
 
-        devIteration: 1,
+        // devIteration: 1,
 
-        artIteration: 1,
+        // artIteration: 1,
 
-        otherIteration: 1,
+        // otherIteration: 1,
 
         filmIteration: 1,
 
@@ -99,84 +99,260 @@ $( document ).ready(function() {
 
             $('.overlay').hide();
 
-            $('#devClicker').click(function() {
+            this.startShow();
 
-                console.log('dev');
+            // $('#devClicker').click(function() {
 
-                self.devStartShow();
+            //     console.log('dev');
 
-            });
+            //     self.devStartShow();
 
-            $('#artClicker').click(function(){
+            // });
 
-                console.log('art');
+            // $('#artClicker').click(function(){
 
-                self.artStartShow();
+            //     console.log('art');
+
+            //     self.artStartShow();
                 
-            });
+            // });
 
-            $('#otherClicker').click(function(){
+            // $('#otherClicker').click(function(){
 
-                console.log('other');
+            //     console.log('other');
 
-                self.otherStartShow();
+            //     self.otherStartShow();
 
-            });
+            // });
 
         },
 
-        devStartShow: function () {
+        startShow: function () {
 
             var self = this;
 
-            if (this.artIsClicked === false && this.otherIsClicked === false) {
+            // this.devIteration = 1;
 
-                this.devIsClicked = true;
+            $('#devClicker').click(function() {
+
+                if (self.artIsClicked === true) {
+
+                    //Close art section and open dev
+
+                    self.closeArt();
+
+                    self.openDev();
+
+                } else if (self.otherIsClicked === true) {
+
+                    //Close other section and open dev
+
+                    self.closeOther();
+
+                    //open dev
+
+                    self.openDev();
+
+
+                } else if (self.devIsClicked === true) {
+
+                    self.closeDev();
+
                 
-                
-                switch (this.devIteration) {
-              
-                    case 1:
-                        
-                        this.devClassChanger(0);
-                        
-                        $('.devExtender').slideDown(800);
-                        
-                        this.devChangeState();
-                        
-                        this.devAutoScroll();
+                } else if (self.devIsClicked === false) {
 
-                        this.devTabSelector();
+                    self.openDev();
 
-                        $('.devFloaterClose').show();
+                }
 
-                        break;
+            });
+
+
+            $('#artClicker').click(function () {
+
+                if (self.devIsClicked === true) {
+
+                    //close dev open art
+
+                    //close dev
+
+                    self.closeDev();
+
+                    //open art
+
+                    self.openArt();
+
+                } else if (self.otherIsClicked === true) {
                     
-                    case 2:
+                    //close other open art
 
-                        clearTimeout(this.devTimeout);
+                    //close other
 
-                        $('.devExtender').slideUp(800);
+                    self.closeOther();
 
-                        this.devUnChangeState();
 
-                        this.unAutoScroll();
+                    //open art
 
-                        this.devIsClicked = false;
+                    self.openArt();
 
-                        break;
+                } else if (self.artIsClicked === true) {
+
+                    //close art
+
+                    self.closeArt();
+
+
+                } else if (self.artIsClicked === false) {
+
+                    //open art
+
+                    self.openArt();
 
                 }
 
-                this.devIteration++;
-               
-                if (this.devIteration > 2) {
+                
 
-                    this.devIteration = 1
+                // self.artIsClicked = true;
+
+            });
+
+            $('#otherClicker').click( function () {
+
+                if (self.devIsClicked === true) {
+
+                    //close dev open other
+
+                    //close dev
+
+                    self.closeDev();
+
+                    //open other
+
+                    self.openOther();
+
+                } else if (self.artIsClicked === true) {
+
+                    //close art open other
+
+                    //close art
+
+                    self.closeArt();
+
+                    //open other
+
+                    self.openOther();
+
+                } else if (self.otherIsClicked === true) {
+
+                    //close other
+
+                    self.closeOther();
+
+
+                } else if (self.otherIsClicked === false) {
+
+                    //open other
+
+                    self.openOther();
 
                 }
 
-            }
+            });
+
+
+        },
+
+        openDev: function () {
+
+            this.devIsClicked = true;
+
+            this.devClassChanger(0);
+            
+            $('.devExtender').slideDown(800);
+            
+            this.devChangeState();
+            
+            this.devAutoScroll();
+
+            this.devTabSelector();
+
+            $('.devFloaterClose').show();
+
+        },
+
+        closeDev: function () {
+
+            this.devIsClicked = false;
+
+            clearTimeout(this.devTimeout);
+
+            $('.devExtender').slideUp(800);
+
+            this.devUnChangeState();
+
+        },
+
+        openArt: function () {
+
+            this.artIsClicked = true;
+
+            this.artClassChanger(0);
+
+            $('.artExtender').slideDown(800);
+
+            this.artChangeState();
+
+            this.artAutoScroll();
+
+            this.artModals();
+
+            this.floaterCloseArt();
+
+            $('.artFloaterClose').show();
+
+        },
+
+        closeArt: function () {
+
+            this.artIsClicked = false;
+
+            $('.artExtender').slideUp(800);
+
+            clearTimeout(this.artTimeout);
+
+            this.artUnChangeState();
+
+        },
+
+        openOther: function () {
+
+            this.otherIsClicked = true;
+
+            this.otherClassChanger(0);
+
+            $('.otherExtender').slideDown(800);
+
+            this.otherChangeState();
+
+            this.otherAutoScroll();
+
+            this.otherTabSelector();
+
+            this.floaterCloseOther();
+
+            $('.otherFloaterClose').show();
+
+        },
+
+        closeOther: function () {
+
+            this.otherIsClicked = false;
+
+            $('.otherExtender').slideUp(800);
+
+            clearTimeout(this.otherTimeout);
+
+            this.otherUnChangeState();
 
         },
 
@@ -224,64 +400,6 @@ $( document ).ready(function() {
 
         },
 
-        artStartShow: function () {
-
-            var self = this;
-
-            if (this.devIsClicked === false && this.otherIsClicked === false) {
-
-                this.artIsClicked = true;
-            
-                // var iteration= $(this).data('iteration')||1
-                
-                switch (this.artIteration) {
-                
-                    case 1:
-
-                        this.artClassChanger(0);
-
-                        $('.artExtender').slideDown(800);
-
-                        this.artChangeState();
-
-                        this.artAutoScroll();
-
-                        this.artModals();
-
-                        this.closeArt();
-
-                        $('.artFloaterClose').show();
-
-                        break;
-                    
-                    case 2:
-
-                        $('.artExtender').slideUp(800);
-
-                        clearTimeout(this.artTimeout);
-
-                        this.artUnChangeState();
-
-                        this.unAutoScroll();
-
-                        this.artIsClicked = false;
-
-                        break;
-
-                }
-
-                this.artIteration++;
-                
-                if (this.artIteration>2) {
-                 
-                    this.artIteration = 1
-
-                }
-
-                // $(this).data('iteration',iteration);
-            }
-        },
-
         artClassChanger: function (index) {
 
             var self = this,
@@ -324,62 +442,6 @@ $( document ).ready(function() {
 
             }, 100);   
 
-        },
-
-        otherStartShow: function () {
-
-            var self = this;
-
-            if (this.devIsClicked === false && this.artIsClicked === false) {
-
-                this.otherIsClicked = true;
-
-                
-                switch (this.otherIteration) {
-                
-                    case 1:
-
-                        this.otherClassChanger(0);
-
-                        $('.otherExtender').slideDown(800);
-
-                        this.otherChangeState();
-
-                        this.otherAutoScroll();
-
-                        this.otherTabSelector();
-
-                        this.closeOther();
-
-                        $('.otherFloaterClose').show();
-
-                        break;
-                    
-                    case 2:
-
-                        $('.otherExtender').slideUp(800);
-
-                        clearTimeout(this.otherTimeout);
-
-                        this.otherUnChangeState();
-
-                        this.unAutoScroll();
-
-                        this.otherIsClicked = false;
-
-                        break;
-
-                }
-
-                this.otherIteration++;
-                
-                if (this.otherIteration>2) {
-
-                    this.otherIteration=1
-
-                }
-
-            }
         },
 
         otherClassChanger: function (index) {
@@ -568,16 +630,7 @@ $( document ).ready(function() {
 
             $('.devFloaterClose').click( function () {
 
-                //We need to set this to 2 because
-                //the switch statement won't iterate
-                //because we've technically called this function 
-                //within case1 of the switch
-
-                $('.devFloaterClose').hide();
-
-                self.devIteration = 2;
-
-                self.devStartShow();
+                self.closeDev();
 
             });
 
@@ -719,34 +772,25 @@ $( document ).ready(function() {
 
         },
 
-        closeArt: function () {
+        floaterCloseArt: function () {
 
             var self = this;
 
             $('.artFloaterClose').click( function () {
 
-                $('.artFloaterClose').hide();
-
-                self.artIteration = 2;
-
-                self.artStartShow();
+                self.closeArt();
 
             });
 
         },
 
-        closeOther: function () {
+        floaterCloseOther: function () {
 
             var self = this;
 
             $('.otherFloaterClose').click( function () {
 
-                $('.otherFloaterClose').hide();
-
-                self.otherIteration = 2;
-
-                self.otherStartShow();
-
+                self.closeOther();
             });
 
         },
