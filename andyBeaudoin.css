@@ -9,6 +9,9 @@ nav {
 li {
 	text-decoration: none;
 }
+ul {
+  display: inline-block;
+}
 .title {
   font-size: 2em;
 }

@@ -1,0 +1,18 @@
+.Blog--article {
+	margin: 0px 10%;
+	border-bottom: 1px solid black;
+	background: url(http://placehold.it/600x600) no-repeat center;
+	min-height: 600px;
+	padding: 5px 5%;
+}
+.Blog--article-content {
+	max-width: 50%;
+  display: inline-block;
+}
+.Blog--article h1 {
+}
+.Blog--article p {
+}
+.Blog--article img {
+	display: inline-block;
+}
