@@ -1,3 +1,28 @@
+a {
+	color: black;
+	text-decoration: none;
+}
+a:link {
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: black;
+	text-decoration: none;
+}
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+a:active {
+  color:black;
+  text-decoration: none;
+}
+.LinkFloat {
+	float: right;
+	margin-right: 5%;
+	display: inline-block;
+}
 .Blog--article {
 	margin: 0px 10%;
 	border-bottom: 1px solid black;

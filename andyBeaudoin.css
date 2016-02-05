@@ -1,6 +1,3 @@
-body {
-	/*background-color: #F9F3F3;*/
-}
 nav {
 	width: 90%;
 	margin: 15px auto;
@@ -15,8 +12,13 @@ ul {
 .title {
   font-size: 2em;
 }
-.blog_link {
+.blogFloat {
   float: right;
+  display: inline-block;
+  margin-top: 1%;
+  margin-right: 10%;
+}
+.blog_link {
   margin-right: 5%;
   margin-top: 1%;
 
