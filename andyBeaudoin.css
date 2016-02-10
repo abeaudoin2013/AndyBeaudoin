@@ -394,6 +394,10 @@ ul {
   margin-bottom: 5%;
 }
 
+.writings {
+  text-align: center;
+}
+
 .otherTabs h4 {
   display: inline-block;
   font-size: 2em;

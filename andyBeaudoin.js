@@ -801,11 +801,11 @@ $( document ).ready(function() {
             darken = this.changeTabColor,
             lighten = this.initialTabColor;
 
-            $('.filmDrop').css(darken);
-            $('.films').fadeIn(500);
+            $('.writingDrop').css(darken);
+            $('.writings').fadeIn(500);
 
-            $('.writingDrop').css(lighten);
-            $('.writings').hide();
+            $('.filmsDrop').css(lighten);
+            $('.films').hide();
 
             $('.pastWorkDrop').css(lighten);
             $('.pastWorks').hide();
