@@ -565,6 +565,9 @@ $( document ).ready(function() {
             $('.aboutBlock').hide();
             $('#blockTab').css(lighten);
 
+            $('.todoList').hide();
+            $('#todoTab').css(lighten);
+
             $('.aboutVicarious').hide();
             $('#vicTab').css(lighten);
 
@@ -574,6 +577,7 @@ $( document ).ready(function() {
             $('#vicTab').click( function () {
 
                 $('#vicTab').css(darken);
+                $('#todoTab').css(lighten);
                 $('#blockTab').css(lighten);
                 $('#clientsTab').css(lighten);
 
@@ -583,9 +587,27 @@ $( document ).ready(function() {
                 // this.devTabTop = false;
                 $('.myClients').hide();
 
+                $('.todoList').hide();
+
                 // this.devTabTop = true;
 
                 $('.aboutVicarious').fadeIn(500);
+
+            });
+
+            $('#todoTab').click( function () {
+
+                $('#todoTab').css(darken);
+                $("#vicTab").css(lighten);
+                $('#blockTab').css(lighten);
+                $('#clientsTab').css(lighten);
+
+                // this.devTabBlock = false;
+                $('.aboutBlock').hide();
+                $('.myClients').hide();
+                $('.aboutVicarious').hide();
+
+                $('.todoList').fadeIn(500);
 
             });
 
@@ -593,10 +615,13 @@ $( document ).ready(function() {
 
                 $('#vicTab').css(lighten);
                 $('#blockTab').css(darken);
+                $('#todoTab').css(lighten);
                 $('#clientsTab').css(lighten);
 
                 // this.devTabVic = false;
                 $('.aboutVicarious').hide();
+
+                $('.todoList').hide();
 
                 // this.devTabTop = false;
                 $('.myClients').hide();
@@ -610,11 +635,14 @@ $( document ).ready(function() {
             $('#clientsTab').click( function () {
 
                 $('#vicTab').css(lighten);
+                $('#todoTab').css(lighten);
                 $('#blockTab').css(lighten);
                 $('#clientsTab').css(darken);
                 
                 // this.devTabBlock = false;
                 $('.aboutBlock').hide();
+
+                $('.todoList').hide();
 
                 // this.devTabVic = false;
                 $('.aboutVicarious').hide();
