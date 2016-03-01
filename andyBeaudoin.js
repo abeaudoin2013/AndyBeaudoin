@@ -562,31 +562,26 @@ $( document ).ready(function() {
             darken = this.changeTabColor,
             lighten = this.initialTabColor;
 
-            // this.devTabBlock = false;
             $('.aboutBlock').hide();
-
-            // this.devTabTop = false;
-            $('.aboutTopFive').hide();
-
-            // this.devTabVic = true;
-            $('.aboutVicarious').fadeIn(500);
-            $('#vicTab').css(darken);
             $('#blockTab').css(lighten);
-            $('#topTab').css(lighten);
-            
-            
+
+            $('.aboutVicarious').hide();
+            $('#vicTab').css(lighten);
+
+            $('.myClients').fadeIn(500);
+            $('#clientsTab').css(darken);            
 
             $('#vicTab').click( function () {
 
                 $('#vicTab').css(darken);
                 $('#blockTab').css(lighten);
-                $('#topTab').css(lighten);
+                $('#clientsTab').css(lighten);
 
                 // this.devTabBlock = false;
                 $('.aboutBlock').hide();
 
                 // this.devTabTop = false;
-                $('.aboutTopFive').hide();
+                $('.myClients').hide();
 
                 // this.devTabTop = true;
 
@@ -598,13 +593,13 @@ $( document ).ready(function() {
 
                 $('#vicTab').css(lighten);
                 $('#blockTab').css(darken);
-                $('#topTab').css(lighten);
+                $('#clientsTab').css(lighten);
 
                 // this.devTabVic = false;
                 $('.aboutVicarious').hide();
 
                 // this.devTabTop = false;
-                $('.aboutTopFive').hide();
+                $('.myClients').hide();
 
                 // this.devTabBlock = true;
 
@@ -612,11 +607,11 @@ $( document ).ready(function() {
 
             });
 
-            $('#topTab').click( function () {
+            $('#clientsTab').click( function () {
 
                 $('#vicTab').css(lighten);
                 $('#blockTab').css(lighten);
-                $('#topTab').css(darken);
+                $('#clientsTab').css(darken);
                 
                 // this.devTabBlock = false;
                 $('.aboutBlock').hide();
@@ -624,7 +619,7 @@ $( document ).ready(function() {
                 // this.devTabVic = false;
                 $('.aboutVicarious').hide();
 
-                $('.aboutTopFive').fadeIn(500);
+                $('.myClients').fadeIn(500);
 
             });
 
