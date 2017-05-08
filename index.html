@@ -4,6 +4,25 @@
 	<title>Andy Beaudoin Portfolio</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon.ico/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon.ico/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon.ico/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon.ico/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon.ico/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="images/favicon.ico/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon.ico/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="images/favicon.ico/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ico/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon.ico/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon.ico/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
 	<script src="jquery-2.1.4.min.js"></script>
 	<script src="jquery-ui.min.js"></script>
 	<script src="andyBeaudoin.js"></script>
@@ -13,12 +32,17 @@
 </head>
 <body>
 
+<i class="fa fa-3 fa-cloud" id="cloud" aria-hidden="true"></i>
+<i class="fa fa-3 fa-cloud" id="cloud-2" aria-hidden="true"></i>
+<i class="fa fa-3 fa-cloud" id="cloud-3" aria-hidden="true"></i>
+
 	<header>
 		<nav>
 			<ul>
-				<!-- <h4><a href="blog.html" class='blog_link' target="_blank">Blog</a></h4> -->
-				<p class="title">Andy Beaudoin</p>
-
+				<p class="title">Andy <span id="change-letter">B</span>eaudoin</p>
+			</ul>
+			<ul class="blogFloat">
+				<h4><a href="https://ba-ding-ba-dang-beaudoin-blog.tumblr.com/" class='blog_link' target="_blank">Blog</a></h4>
 			</ul>
 		</nav>
 	</header>
@@ -27,26 +51,29 @@
 
 		<div class="row" id='too_tight'>
 
-		<div class="col-lg-5">
-			<div class='about'>
-				<h2 id="about">I'm a web developer.</h2>
-				<p>Art and technology holds value in everything I do. I seek creative solutions and thrive in dynamic, team-oriented environments. I'm proficient in HTML5, CSS3, Javascript, Ruby and the Rails framework. I plan on investing more time in Javascript frameworks, PHP, and Objective C. I am currently seeking full-time employment.</p>
+			<div class="col-lg-7">
+				<div class='about'>
+					<h1 id="about">I'm a web developer and artist</h1>
+					<p>Also these things: writer, web designer, francophile, coffee snob, improvisor, lousy stand-up comedy, uncle, activist, prep chef, aspiring set designer for Wes Anderson movies, french fry addict, guitarist, and over-thinker. I love doing new things. Sometimes I do new things, and then I never do them again. The things I really love doing, I keep doing, like eating french fries. Such is life.</p>
+					<p>Please, have some fun here.</p>
+				</div>
 			</div>
-		</div>
-
-		<div class='col-lg-7'>
-			<div class='contactLinks'>
-				<h3>Contact</h3>
-				<p>abeaudoin2013@gmail.com</p>
-				<a href="https://github.com/abeaudoin2013" target="_blank"><i class="fa fa-github fa-3x"></i><p>github</p></a>
-				<a href="https://www.linkedin.com/in/andybeaudoin" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i><p>linkedIn</p></a>
-				<a href="http://stackoverflow.com/users/5520659/andy-beaudoin" target="_blank"><i class="fa fa-stack-overflow fa-3x"></i><p>stack overflow</p></a>
-				<a href="https://www.instagram.com/sonofserpico/" target="_blank"><i class="fa fa-instagram fa-3x"></i><p>instagram</p></a>
-				<a href="https://twitter.com/abeaudoin2013" target="_blank"><i class="fa fa-twitter fa-3x"></i><p>twitter</p></a>		
+			<div class='col-lg-5'>
+				<div class='contactLinks'>
+					<h3>Contact</h3>
+					<p>abeaudoin2013@gmail.com</p>
+					<a href="https://github.com/abeaudoin2013" target="_blank"><i class="fa fa-github fa-3x"></i><p>github</p></a>
+					<a href="https://www.linkedin.com/in/andybeaudoin" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i><p>linkedIn</p></a>
+					<a href="https://www.instagram.com/sonofserpico/" target="_blank"><i class="fa fa-instagram fa-3x"></i><p>instagram</p></a>
+					<a href="https://twitter.com/abeaudoin2013" target="_blank"><i class="fa fa-twitter fa-3x"></i><p>twitter</p></a>		
+				</div>
 			</div>
-		</div>
+	  </div>
+	  
+	 <!--  <div class="row">
+			
 
-	</div>
+	  </div> -->
 
 		<div class="row">
 
@@ -72,7 +99,7 @@
 
 					<div class="content" id="otherClicker">
 						<i class="fa fa-camera-retro fa-5x" id="icon3"></i>
-						<p class="titles">Other</p>
+						<p class="titles">Writings, Films, and Other Things</p>
 					</div>
 
 			</div>
@@ -81,22 +108,23 @@
 
 <!-- content -->
 
-		<div class="row">
+		<div class="row" id="content-row">
 
 			<div class="col-md-12">
 
 				<div class="devExtender">
 					<nav calss='extenderNav'>
+						<h4 class='extenderOptions' id='clientsTab'>Clients</h4>
 						<h4 class='extenderOptions' id="vicTab">Vicarious</h4>
+						<h4 class='extenderOptions' id='todoTab'>List Maker</h4>
 						<h4 class='extenderOptions' id='blockTab'>Block</h4>
-						<h4 class='extenderOptions' id='topTab'>Top Five</h4>
 						<div class='devFloaterClose'><i class="fa fa-times fa-2x"></i></div>
 					</nav>
 
 					<div class='aboutVicarious'>
 						<div class="col-sm-4">
-							<h1>Vicarious.</h1>
-							<p>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes. The posts can be linked together by one story. The idea was to make an interactive travel blog, so that you could get a better picture of what your friends' trips around the world were like.</p>
+							<h1>Vicarious</h1>
+							<p>Using Google Maps street view API, I was able to create a system in which users can make posts at specific latitudes and longitudes directly on Google Maps Street View. It is an interactive travel blog for sharing your stories and reading others.</p>
 							<a class='links' href="https://vicarious-poster.herokuapp.com/" target="_blank">See the website</a>
 							<a class='links' href="https://github.com/abeaudoin2013/vicarious" target="_blank"><i class="fa fa-github fa-3x"></i></a>
 						</div>
@@ -114,7 +142,7 @@
 						<div class="col-sm-4">
 							<h2>Block</h2>
 							<p>This app was designed for writers and creatives struggling with writer's block. With the help of my team we created three different kinds of writing exercises that are randomly generated. Users are meant to write at least 250 words within ten minutes. In the future we hope to add another main feature which allows writers to store their documents on the web so that other writers can pull copies down to edit and critique each other's work.</p>
-							<a class='links' href="http://stark-falls-7672.herokuapp.com/login" target="_blank">See the website</a>
+							<!-- <a class='links' href="http://stark-falls-7672.herokuapp.com/login" target="_blank">See the website</a> -->
 							<a class='links' href="https://github.com/abeaudoin2013/Block" target="_blank"><i class="fa fa-github fa-3x"></i></a>
 						</div>
 						<div class="col-sm-4">
@@ -127,19 +155,74 @@
 						</div>
 					</div>
 
-					<div class='aboutTopFive'>
-						<div class="col-sm-4">
-							<h2>Top Five</h2>
-							<p>This is a simple but fun-to-use app which gives users the oppourtunity to discuss the best of the best. Inspired by High Fidelity, the app allows users to list their top 5 all time favorite bands, movies, pasta dishes--whatever is on your mind.</p>
-							<a class='links' href="https://all-time-top-5.herokuapp.com/" target="_blank">See the website</a>
-							<a class='links' href="https://github.com/abeaudoin2013/TopFive" target="_blank"><i class="fa fa-github fa-3x"></i></a>
+					<div class='myClients'>
+						<div class="row clients-row">
+							<div class="col-sm-4">
+								<h2><a href="annalublina.com" target="_blank">Marianne Findler, PHD</a></h2>
+								<p><strong>Lead Developer & Designer</strong></p>
+								<p>January 2017 to March 2017</p>
+								<p>I created a business site for Marianne Findler, a therapist in Manhattan. I built the site using HTML, SASS, and Javascript. In order for the site to run quickly, I studied how to create animations with CSS so as to make the site more perfomant.</p>
+								<img class="clientPic" src="images/clients/findler.png" width="100%">
+							</div>
+							<div class="col-sm-4">
+								<h2><a href="annalublina.com" target="_blank">Anna Lublina</a></h2>
+								<p><strong>Lead Developer & Designer</strong></p>
+								<p>January 2017 to March 2017</p>
+								<p>I worked with actor and performance artist, Anna Lublina, in creating a entirely unique portfolio website to display her work and showcase her artistic persona. I built a CRUD system using Meteor which also gave admin capabilites for Anna. Other technologies used: HTML, CSS, Stylus, Meteor JS, Digital Ocean, Meteor Up.</p>
+								<img class="clientPic" src="images/clients/anna.png" width="100%">
+							</div>
+							<div class="col-sm-4">
+								<h2><a href="http://stg.pathboost.com/demos_1.2/pbhire" target="_blank">Strayer University PathBoost</a></h2>
+								<p><strong>Lead Front-End Web Developer and Designer</strong></p>
+								<p>May 2016 to May 2017</p>
+								<p>I was responsible for working directly with the graphic designer for building out an interactive educational platform for Strayer University. I built a highly responsive platform using HTML, CSS, Javascript and some Javascript libraries.</p>
+								<img class="clientPic" src="images/clients/strayer.png" width="100%">
+							</div>
+							
 						</div>
-						<div class="col-sm-4">
-							<div id="pic9"></div>
-							<div id="pic11"></div>
+						<div class="row clients-row">
+							<div class="col-sm-4">
+								<h2><a href="https://www.bgcn.org/" target="_blank">Boys & Girls Club of Newark</a></h2>
+								<p><strong>HTML, CSS, Javascript, Wordpress and Webmaster</strong></p>
+								<p>July 2016 and January 2016</p>
+								<p>I was a wordpress consultant for the Boys and Girls club of Newark. I was responsible for making HTML and CSS updates as well as configuring a third party donation package written Javascript. I also rerouted the domain to point to the newly hosted web application.</p>
+								<img class="clientPic" src="images/clients/bgcn.png" width="100%">
+							</div>
+							<div class="col-sm-4">
+								<h2><a href="https://www.cancerresearch.org/" target="_blank">Cancer Research Institute</a></h2>
+								<p><strong>Email Designer and Developer.</strong></p>
+								<p>April 2016</p>
+								<p>Converted PDF design into HTML email. The email's design is displayed nicely on all browsers and email clients, including the very tricky Microsoft Outlook.</p>
+								<img class="clientPic" src="images/clients/criEmail.jpg" width="100%">
+							</div>
+							<div class="col-sm-4">
+								<h2><!-- <a href="http://www.moppy.com/" target="_blank"> -->Moppy.com<!-- </a> --></h2>
+								<p><strong>HTML, CSS, Ruby on Rails, and Javascript Developer</strong></p>
+								<p>March 2016</p>
+								<p>I took over as the lead developer for Moppy.com in January 2016. Although the website has already been built, I continue front and back end maintenance when requested by the client. I have also deployed and configured a mailchimp account with it so that users are able to signup for email offers.</p>
+								<img class="clientPic" src="images/clients/moppy.jpg" width="100%">
+							</div>
 						</div>
-						<div class="col-sm-4">
-							<div id="pic10"></div>
+						<div class="row clients-row">
+							<div class="col-sm-4">
+								<h2><a href="https://lemon.co/" target="_blank">Lemon.co</a></h2>
+								<p><strong>HTML, CSS, Javascript, Meteor, Jasmine, and Email Developer </strong></p>
+								<p>January to March 2016</p>
+								<p>I joined Lemon starting in Dec 2015 as a junior developer. I worked directly with the Meteor application on which Lemon.co runs. I helped build several email campaigns, designed multiple landing pages, implimented a blog, and ran tests using Jasmine.js</p>
+								<img class="clientPic" src="images/clients/lemon.jpg" width="100%">
+							</div>
+						</div>
+					</div>
+
+					<div class='todoList'>
+						<div class="col-sm-5">
+							<h1>List Maker</h1>
+							<p>This is a website that allows you to make todo lists. It uses javascript to manipulate the database without redirecting the page. Users are able to sign up and sign out, knowing their information has been saved. It also uses responsive design.</p>
+							<a class='links' href="https://tranquil-brook-76347.herokuapp.com/signin" target="_blank">See the website</a>
+							<a class='links' href="https://github.com/abeaudoin2013/uncubedChallenge" target="_blank"><i class="fa fa-github fa-3x"></i></a>
+						</div>
+						<div class="col-sm-7">
+							<div id="pic6a"></div>
 						</div>
 					</div>
 				</div>
@@ -224,17 +307,11 @@
 
 					</div>
 
-					<!-- WRITE ABOUT CRAIG WRITING PROJECT-->
-
 					<div class='writings'>
-						<div class="col-sm-6">
-							<h2><a href="https://www.tumblr.com/blog/franco-file" target="_blank">The Francophile</a></h2>
-							<p>I spent nearly a year living in Paris as an ESL teacher and avid French speaker. I decided to chronicle my journies traveling around the country and different parts of Europe either by train, boat, bus or bike.</p>
-						</div>
-						<div class="col-sm-6">
-							<h2><a href="https://www.uloop.com/news/author.php/891/Andy-Beaudoin" target="_blank">Uloop News</a></h2>
-							<p>This was one of my capstone internships for my English major in college. I was a freelance journalist reporting on popular culture events centered around student life at Michigan State University.
-							</p>
+						<div class="row">
+							<div class="col-sm-12">
+								<h3>All of my writing has been moved to my blog. <a href="https://ba-ding-ba-dang-beaudoin-blog.tumblr.com/" target="_blank">Go there.</a></h3>
+							</div>
 						</div>
 					</div>
 
