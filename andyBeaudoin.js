@@ -55,7 +55,7 @@ $( document ).ready(function() {
 
         addedProps: {
             'border': '1px solid #A32227',
-            'background-color': '#ECE6CD'
+            'background-color': '#fffae4'
         },
 
         lostProps: {
@@ -99,6 +99,8 @@ $( document ).ready(function() {
 
             $('.overlay').hide();
 
+            $("#content-row").css({visibility: "hidden"});
+
             this.startShow();
 
             // $('#devClicker').click(function() {
@@ -135,6 +137,8 @@ $( document ).ready(function() {
 
             $('#devClicker').click(function() {
 
+                $("#content-row").css({visibility: "visible"});
+
                 if (self.artIsClicked === true) {
 
                     //Close art section and open dev
@@ -156,7 +160,7 @@ $( document ).ready(function() {
 
                 } else if (self.devIsClicked === true) {
 
-                    self.closeDev();
+                    self.closeDev(true);
 
                 
                 } else if (self.devIsClicked === false) {
@@ -169,6 +173,8 @@ $( document ).ready(function() {
 
 
             $('#artClicker').click(function () {
+
+                $("#content-row").css({visibility: "visible"});
 
                 if (self.devIsClicked === true) {
 
@@ -199,7 +205,7 @@ $( document ).ready(function() {
 
                     //close art
 
-                    self.closeArt();
+                    self.closeArt(true);
 
 
                 } else if (self.artIsClicked === false) {
@@ -217,6 +223,8 @@ $( document ).ready(function() {
             });
 
             $('#otherClicker').click( function () {
+
+                $("#content-row").css({visibility: "visible"});
 
                 if (self.devIsClicked === true) {
 
@@ -246,7 +254,7 @@ $( document ).ready(function() {
 
                     //close other
 
-                    self.closeOther();
+                    self.closeOther(true);
 
 
                 } else if (self.otherIsClicked === false) {
@@ -280,13 +288,17 @@ $( document ).ready(function() {
 
         },
 
-        closeDev: function () {
+        closeDev: function (closeRow) {
 
             this.devIsClicked = false;
 
             clearTimeout(this.devTimeout);
 
-            $('.devExtender').slideUp(800);
+            $('.devExtender').slideUp(800, function () {
+                if (closeRow) {
+                  $("#content-row").css({visibility: "hidden"});
+                }
+            });
 
             this.devUnChangeState();
 
@@ -312,11 +324,15 @@ $( document ).ready(function() {
 
         },
 
-        closeArt: function () {
+        closeArt: function (closeRow) {
 
             this.artIsClicked = false;
 
-            $('.artExtender').slideUp(800);
+            $('.artExtender').slideUp(800, function () {
+                if (closeRow) {
+                  $("#content-row").css({visibility: "hidden"});
+                }
+            });
 
             clearTimeout(this.artTimeout);
 
@@ -344,11 +360,15 @@ $( document ).ready(function() {
 
         },
 
-        closeOther: function () {
+        closeOther: function (closeRow) {
 
             this.otherIsClicked = false;
 
-            $('.otherExtender').slideUp(800);
+            $('.otherExtender').slideUp(800, function () {
+                if (closeRow) {
+                  $("#content-row").css({visibility: "hidden"});
+                }
+            });
 
             clearTimeout(this.otherTimeout);
 
@@ -653,7 +673,7 @@ $( document ).ready(function() {
 
             $('.devFloaterClose').click( function () {
 
-                self.closeDev();
+                self.closeDev(true);
 
             });
 
@@ -801,7 +821,7 @@ $( document ).ready(function() {
 
             $('.artFloaterClose').click( function () {
 
-                self.closeArt();
+                self.closeArt(true);
 
             });
 
@@ -813,7 +833,7 @@ $( document ).ready(function() {
 
             $('.otherFloaterClose').click( function () {
 
-                self.closeOther();
+                self.closeOther(true);
             });
 
         },
